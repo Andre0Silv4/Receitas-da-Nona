@@ -101,7 +101,7 @@ _loadReceitas() async {
     _salvarReceitas();
   }
 
-  // Função para formatar os ingredientes
+
   String _formatarIngredientes(String ingredientes) {
     List<String> listaIngredientes = ingredientes.split(RegExp(r'[,\n]')).map((item) => item.trim()).toList();
     return listaIngredientes.map((item) => "- $item").join('\n');
@@ -132,6 +132,7 @@ _loadReceitas() async {
         itemCount: receitas.length,
         itemBuilder: (context, index) {
           return Card(
+            color: Color(0xFFFFAA00),
             child: ListTile(
               title: Text(receitas[index]['titulo']!),
               subtitle: Text('Ingredientes: ${receitas[index]['ingredientes']!}'),
